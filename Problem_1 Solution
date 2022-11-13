@@ -1,0 +1,51 @@
+//##################################### Problem  1  Solution #####################################
+
+#include <stdio.h>
+
+// Function Declaration To Check Any two Numbers Multiples Sum
+int findMultipleSum(int num1, int num2, int range);
+
+int main()
+{
+
+    int Number1, Number2, Range;
+    int storingValuevariable = 0;
+
+    // Taking First Number as an input From User
+    printf("Enter First Number: ");
+    scanf("%d", &Number1);
+
+    // Taking Second Number as an input From User
+    printf("Enter Second  Number: ");
+    scanf("%d", &Number2);
+
+    // Taking Range Number as an input From User
+    printf("Below What Number Of Range You Want to Sum of Those Two Numbers Multiples: ");
+    scanf("%d", &Range);
+
+    // Calling Function & Storing Its Value in another Number
+    storingValuevariable = findMultipleSum(Number1, Number2, Range);
+
+    printf("Sum of Multiples  %d & %d below %d is: %d\n", Number1, Number2, Range, storingValuevariable);
+
+    printf("------------------------------Date:11-November-2022------------------------------\n");
+
+    return 0;
+}
+
+
+// Function Defination To Check Any two Numbers Multiples Sum
+int findMultipleSum(int num1, int num2, int range) // Input Of Number 1 & Number 2.
+{
+    int sum = 0, i = 0;
+    while (i < range) // Within User Given Range Finding Multiples of those Two Numbers
+    {
+
+        if (i % num1 == 0 || i % num2 == 0)
+        {
+            sum = sum + i; // Storing Sum of Those Two  Numbers Multiples in Sum variable
+        }
+        i++;
+    }
+    return sum;
+}
