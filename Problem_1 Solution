@@ -43,7 +43,7 @@ int findMultipleSum(int num1, int num2, int range) // Input Of Number 1 & Number
 
         if (i % num1 == 0 || i % num2 == 0)
         {
-            sum = sum + i; // Storing Sum of Those Two  Numbers Multiples in Sum variable
+            sum = sum + i; // Storing Sum of Those Two  Numbers Multiples in Sum variable.
         }
         i++;
     }
