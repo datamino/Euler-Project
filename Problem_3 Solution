@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    long long int num, MAX, i;
+    printf("Enter a number: ");
+    scanf("%lld", &num);
+    printf("Prime Factors of %lld are\n", num);
+
+    // Prime Factor is a Number which is only Divisible By 1 and itself.
+    // 1 is not a peime Factor
+    // Prime Factors are 2,3,5,7,11,.............
+    for (i = 2; num > 1; i++)
+    {
+        MAX = 0;
+        while (num % i == 0)
+        {
+            printf("%lld ", i);
+            num /= i;
+    // Now I Want to See Which Number is Larger For this First i Initilize MAX variable with 0 Max Variable will go to Every i to check weather that i is greater than MAX or not if it is greater than Max then it MAX is Updated by the Value of i.
+            if (MAX < i)
+            {
+                MAX = i;
+            }
+        }
+    }
+
+    printf("\nThe Larest Prime Factor is :%lld", MAX);
+    printf("\n------------------------------Date:13-November-2022------------------------------\n");
+    return 0;
+}
