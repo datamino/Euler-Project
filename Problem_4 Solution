@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+int main()
+{
+
+    int result, remainder, tempNumber, largest, mul;
+
+    mul = 0;
+    largest = 0;
+
+//  A number ,string or Phrase if we Read Backward gives the same number or word as it is Being Read forwrd .   For Example 1221,racecar etc  
+//  How to Check number is Palindrome or Not?     if Reverse of a number Is = to Actual number then we cn say Number is Plaindrome So we have to Reverse That Number 
+//  The Smalles 3 Digits Number is 100 & the largest 3 Digits number is 999 . So we Start Loop from 100 to 999
+
+    for (int i = 100; i <= 999; i++)      
+    {
+
+        for (int j = 100; j < 999; j++)
+        {
+//multiplying two 3 Digits Number and Storing in a variable
+            mul = i * j;
+
+// Program to check weather  a number is Palindrome or Nor so our Number is Product of two # Digits Numbers here
+            tempNumber = mul;
+            result = 0;
+            while (tempNumber != 0)
+            {
+                remainder = tempNumber % 10;
+                result = result * 10 + remainder;
+                tempNumber = tempNumber / 10;
+            }
+//Now We are Checking Is the Number After Reverse is = to Actual Number 
+
+
+
+            if (result == mul)
+            {  
+//if reverse of a number is = actual Number then Check Our Variable Value is > that number or Not If Not The Assign our Actual Number to That Variable
+
+                if (largest < mul)
+                {
+                    largest = mul;
+                }
+            }
+        }
+    }
+
+    printf("The Product of Largest 3 Digists Number is: %d \n", largest);
+    printf("\n------------------------------Date:14-November-2022------------------------------\n");
+
+    return 0;
+}
